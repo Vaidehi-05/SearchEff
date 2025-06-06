@@ -11,13 +11,20 @@ void displaySet(set<pair<string, string>> s)
         cout<<it->second<<endl;
     }
 }
+void displayVector(vector<string> vec)
+{
+    for(int i=0; i<vec.size(); i++)
+    {
+        cout<<vec[i]<<endl;
+    }
+}
 class searchEff{
 public:
     map<string, map<int, string>> unimap;
     set <pair<string,string>> todos;
     set <pair<string,string>> ideas;
     set <pair<string,string>> torevise;
-    set <string> allUniqueWords;
+    vector <string> allUniqueWords;
     void readFile(string filename)
     {
         ifstream file(filename);
@@ -62,19 +69,16 @@ public:
                         uniqWrds[word]=1;
                     word="";
                 }
-                else
+                else if(isalnum(line[j]))
                 word+=line[j];
                 j+=1;
             }
-            if(j==len)
-            {
-                for(auto it=uniqWrds.begin(); it!=uniqWrds.end(); it++)
-                {
-                    unimap[it->first].insert({it->second, filename});
-                }
-            }
         }
+    for(auto it=uniqWrds.begin(); it!=uniqWrds.end(); it++)
+    {
+        unimap[it->first].insert({it->second, filename});
     }
+}
     void readAllFiles(string foldername)
     {
         for (auto entry : fs::directory_iterator(foldername)) {
@@ -98,6 +102,13 @@ public:
             cout<<endl;
         }
     }
+    void storeAllUniqueWords()
+    {
+        for(auto it=unimap.begin(); it!=unimap.end(); it++)
+        {
+            allUniqueWords.push_back(it->first);
+        }
+    }
     };
 int main()
 {
@@ -110,6 +121,8 @@ int main()
     cout<<"TO REVISE"<<endl;
     displaySet(obj.torevise);
     obj.displayUniMap();
+    obj.storeAllUniqueWords();
+    displayVector(obj.allUniqueWords);
     return 0;
 }
 
