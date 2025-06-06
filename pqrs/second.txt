@@ -1,0 +1,13 @@
+#sorting
+Sorting algorithms are essential in both theory and practice.
+
+We commonly use QuickSort, MergeSort, and BubbleSort.
+@to-do Create visual comparison of time complexities
+
+#binary-search
+Binary Search is used when data is sorted.
+It divides the search space in half.
+
+::idea Make a flowchart for recursive vs iterative binary search
+
+@to-revise Practice lower_bound and upper_bound in STL

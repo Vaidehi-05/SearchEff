@@ -1,0 +1,14 @@
+#graph-theory
+Graph theory is one of the most important topics in computer science.
+It includes concepts like DFS, BFS, and connected components.
+
+@to-do Revise articulation points and bridges
+@to-revise Check Kosaraju’s algorithm again
+
+We should try implementing a cycle detection method using DFS.
+
+::idea Visualize the traversal as a tree in ASCII
+
+#dfs
+Depth First Search explores as far as possible along each branch.
+
