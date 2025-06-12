@@ -1,0 +1,13 @@
+A processor fetches instructions from memory, decodes them, and executes them via the ALU. Cache memory speeds up access time by storing frequently used data.
+
+::idea Visualize the instruction pipeline stages with hazards and how they're resolved using forwarding or stalls.
+
+Virtual memory allows programs to use more memory than is physically available by swapping pages in and out of disk.
+
+@to-revise Understand page replacement algorithms: LRU, FIFO, Optimal.
+
+@to-do Create notes on cache mapping techniques: direct, associative, and set-associative.
+
+Multithreading enables concurrent execution of threads, but introduces race conditions. Use locks, mutexes, and semaphores to ensure synchronization.
+
+Memory hierarchy: registers → cache → RAM → disk, each with increasing size and latency.

@@ -1,0 +1,15 @@
+Supervised learning uses labeled data to train models. Popular algorithms include linear regression, decision trees, and support vector machines.
+
+::idea Investigate ensemble methods like random forests and gradient boosting.
+
+Unsupervised learning identifies hidden patterns in data without labels. Examples include k-means clustering and PCA.
+
+@to-do Write explanation of bias-variance tradeoff with visual examples.
+
+Deep learning uses neural networks to model complex relationships. Backpropagation is key to training these models efficiently.
+
+@to-revise Activation functions: sigmoid, tanh, ReLU, leaky ReLU.
+
+::idea Add notes on reinforcement learning — agent-environment interaction.
+
+Cross-validation helps in estimating model performance. Overfitting and underfitting are common challenges in ML pipelines.

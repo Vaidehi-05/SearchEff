@@ -1,0 +1,11 @@
+The quicksort algorithm is a divide-and-conquer technique. It picks an element as a pivot and partitions the given array around the picked pivot. @to-do Implement randomized pivot selection.
+
+Merge sort is a stable sort, especially useful for linked lists. Its time complexity is always O(n log n). Compared to quicksort, it's not in-place but it's predictable. 
+
+::idea Compare merge sort and quicksort on linked lists vs arrays.
+
+Heap sort, on the other hand, is not stable but has good worst-case performance. @to-revise Binary heap operations: insertion, deletion, and heapify.
+
+In practice, quicksort is faster for arrays due to locality of reference. In some languages, built-in sort is implemented using Timsort, which combines merge sort and insertion sort.
+
+@to-do Research introsort and its hybrid approach.
