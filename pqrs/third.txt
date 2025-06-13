@@ -4,7 +4,9 @@ Merge sort is a stable sort, especially useful for linked lists. Its time comple
 
 ::idea Compare merge sort and quicksort on linked lists vs arrays.
 
-Heap sort, on the other hand, is not stable but has good worst-case performance. @to-revise Binary heap operations: insertion, deletion, and heapify.
+Heap sort, on the other hand, is not stable but has good worst-case performance.
+
+@to-revise Binary heap operations: insertion, deletion, and heapify.
 
 In practice, quicksort is faster for arrays due to locality of reference. In some languages, built-in sort is implemented using Timsort, which combines merge sort and insertion sort.
 

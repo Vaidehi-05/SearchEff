@@ -3,11 +3,22 @@
 using namespace std;
 namespace fs=std::filesystem;
 
-void displaySet(set<pair<string, string>> s)
+// ANSI Color Codes
+string RESET = "\033[0m";
+const string ORANGE = "\033[38;5;208m";
+const string CYAN = "\033[36m";
+const string GREEN = "\033[32m";
+const string YELLOW = "\033[33m";
+const string BLUE = "\033[34m";
+const string MAGENTA="\033[35m";
+
+
+void displaySet(set<pair<string, string>> s, char choice)
 {
     for(auto it=s.begin(); it!=s.end(); it++)
     {
         cout<<it->first<<endl;
+        if(choice=='y')
         cout<<it->second.substr(it->second.find_last_of('\\')+1)<<endl;
     }
 }
@@ -82,6 +93,7 @@ public:
         {
             unimap[it->first].insert({it->second, filename});
         }
+        file.close();
     }
     void readAllFiles(string foldername)
     {
@@ -117,13 +129,18 @@ public:
     void displayWordPres(string wrd)
     {
         int num, i=0;
+        char ch;
         cout<<"Enter how many files you want to see: ";
         cin>>num;
         for(auto it=unimap[wrd].rbegin(); it!=unimap[wrd].rend()&&i<num; it++)
         {
             cout<<it->second.substr(it->second.find_last_of('\\')+1);
-            cout<<"\t: "<<it->first<<"  times"<<endl;
             i++;
+            cout<<"Do you want to see all occurrences of "<<wrd<<" in this file?"<<endl;
+            cout<<"Enter y/n: ";
+            cin>>ch;
+            if(ch=='y')
+                previewWordInFile(it->second, wrd);
         }
     }
     int findLevestein(string s, string t)
@@ -242,26 +259,72 @@ public:
                 j++;
         }
     }
-   /* void previewWordInFile(string filename)
+    void previewWordInFile(string filename, string wrd)
     {
-        ifstream(file)
-    } */
+        ifstream file(filename);
+        string line="";
+        int count_of_lines=0;
+        while(getline(file, line))
+        {
+            count_of_lines++;
+            if(line.find(wrd)!=string::npos)
+            {
+                cout<<line.substr(0, line.find(wrd))<<CYAN<<wrd<<RESET<<line.substr(line.find(wrd)+wrd.size())<<"   (--line "<<count_of_lines<<")"<<endl;
+            }
+        }
+    }
     };
 int main()
 {
+    int f=1, ch;
+    char choice;
+    cout<<"Welcome to "<<CYAN<<"SearchEff"<<RESET<<"! Just give us your notes folder and we'll have them as neatly arranged as is possible!"<<endl<<endl;
+    cout<<MAGENTA<<"Loading and Prepping your files...."<<RESET<<endl<<endl;
     searchEff obj;
     obj.readAllFiles("C:/Users/Sia Srivastava/OneDrive/Desktop/Git folder/SearchEff/pqrs");
-    cout<<"TO-DOS"<<endl;
-    displaySet(obj.todos);
-    cout<<"IDEAS"<<endl;
-    displaySet(obj.ideas);
-    cout<<"TO REVISE"<<endl;
-    displaySet(obj.torevise);
-    obj.displayUniMap();
     obj.storeAllUniqueWords();
-    displayVector(obj.allUniqueWords);
-    obj.searchForWord();
-    obj.searchPref();
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<ORANGE<<"Files Loaded! We're good to go!"<<RESET<<endl<<endl;
+    while(f==1)
+    {
+        cout<<YELLOW<<"SearchEff Menu:"<<endl;
+        cout<<"1 for Viewing your To-Do List"<<endl;
+        cout<<"2 for Viewing the Ideas you've got in store"<<endl;
+        cout<<"3 for Starting with your revision"<<endl;
+        cout<<"4 for Searching a Word in your files"<<endl;
+        cout<<"5 for Searching a Prefix matching words in your files"<<endl;
+        cout<<"Enter your choice: "<<RESET<<endl;
+        cin>>ch;
+        switch(ch)
+        {
+            case 1:
+                cout<<"Do you want to view file names where they appear as well? "<<endl;
+                cout<<"Enter y/n: "<<endl;
+                cin>>choice;
+                displaySet(obj.todos, choice);
+                break;
+            case 2:
+                cout<<"Do you want to view file names where they appear as well? "<<endl;
+                cout<<"Enter y/n: "<<endl;
+                cin>>choice;
+                displaySet(obj.ideas, choice);
+                break;
+            case 3:
+                cout<<"Do you want to view file names where they appear as well? "<<endl;
+                cout<<"Enter y/n: "<<endl;
+                cin>>choice;
+                displaySet(obj.torevise, choice);
+                break;
+            case 4:
+                obj.searchForWord();
+                break;
+            case 5:
+                obj.searchPref();
+                break;
+        }
+        cout<<"Enter 1 if you want to continue: "<<endl;
+        cin>>f;
+    }
     return 0;
 }
 
