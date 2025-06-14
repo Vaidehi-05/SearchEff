@@ -17,9 +17,9 @@ void displaySet(set<pair<string, string>> s, char choice)
 {
     for(auto it=s.begin(); it!=s.end(); it++)
     {
-        cout<<it->first<<endl;
+        cout<<"->      "<<it->first<<endl;
         if(choice=='y')
-        cout<<it->second.substr(it->second.find_last_of('\\')+1)<<endl;
+        cout<<GREEN<<":  "<<it->second.substr(it->second.find_last_of('\\')+1)<<RESET<<endl;
     }
 }
 
@@ -134,11 +134,12 @@ public:
         cin>>num;
         for(auto it=unimap[wrd].rbegin(); it!=unimap[wrd].rend()&&i<num; it++)
         {
-            cout<<it->second.substr(it->second.find_last_of('\\')+1);
+            cout<<endl<<endl<<MAGENTA<<"File found:--     "<<it->second.substr(it->second.find_last_of('\\')+1)<<RESET<<endl<<endl;
             i++;
-            cout<<"Do you want to see all occurrences of "<<wrd<<" in this file?"<<endl;
+            cout<<ORANGE<<"Do you want to see all occurrences of "<<wrd<<" in this file?"<<RESET<<endl;
             cout<<"Enter y/n: ";
             cin>>ch;
+            cout<<endl;
             if(ch=='y')
                 previewWordInFile(it->second, wrd);
         }
@@ -168,6 +169,7 @@ public:
         string wrd;
         cout<<"Enter word whose detailed frequency analysis you want to know: ";
         cin>>wrd;
+        cout<<endl;
         transform(wrd.begin(), wrd.end(), wrd.begin(), ::tolower);
         if(binarySearch(0, wrd, allUniqueWords.size()-1)!=-1)
         {
@@ -176,20 +178,21 @@ public:
         else
         {
             vector<pair<int, string>> allMatching;
-            cout<<"Oops! You don't have the exact word you mentioned in your notes!"<<endl;
-            cout<<"But, don't you worry, we'll find just the right suggestions for you!"<<endl;
+            cout<<endl<<ORANGE<<"Oops! You don't have the exact word you mentioned in your notes!"<<endl;
+            cout<<"But, don't you worry, we'll find just the right suggestions for you!"<<RESET<<endl<<endl;
             int n=allUniqueWords.size(), j=0, f=0;
             for(int i=0; i<n; i++)
             {
                 allMatching.push_back({findLevestein(wrd, allUniqueWords[i]), allUniqueWords[i]});
             }
             sort(allMatching.begin(), allMatching.end());
-            cout<<"Enter y/n: ";
+            cout<<"Enter y/n: "<<endl<<endl;
             char ch;
             for(int i=0; i<n&&j<5; i++, j++)
             {
-                cout<<"Did you mean: "<<allMatching[i].second<<" "<<allMatching[i].first<<endl;
+                cout<<endl<<"Did you mean: "<<GREEN<<allMatching[i].second<<RESET<<endl;
                 cin>>ch;
+                cout<<endl;
                 if(ch=='y')
                 {
                     displayWordPres(allMatching[i].second);
@@ -199,7 +202,7 @@ public:
             }
             if(f==0)
             {
-                cout<<"Looks like there are no valid options for your input :(( Try entering a different word."<<endl;
+                cout<<endl<<"Looks like there are no valid options for your input :(( Try entering a different word."<<endl;
             }
         }
     }
@@ -221,6 +224,7 @@ public:
         int num_of_matches;
         cout<<"Enter a prefix as per which you want to look up words: "<<endl;
         cin>>pref;
+        cout<<endl;
         transform(pref.begin(), pref.end(), pref.begin(), ::tolower);
         vector<pair<int, string>> allIncPref;
         for(int i=0; i<allUniqueWords.size(); i++)
@@ -243,12 +247,13 @@ public:
             }
         }
         sort(allIncPref.begin(), allIncPref.end());
-        cout<<"Enter number of matches you want to see, or -1 if you want to see all: ";
+        cout<<endl<<"Enter number of matches you want to see, or -1 if you want to see all: ";
         cin>>num_of_matches;
+        cout<<endl;
         char ch;
         for(int i=0, j=0; i<allIncPref.size(), (num_of_matches==-1||j<num_of_matches); i++)
         {
-            cout<<"Do you want to see file matches for "<<allIncPref[i].second<<" ?"<<endl;
+            cout<<endl<<"Do you want to see file matches for "<<ORANGE<<allIncPref[i].second<<RESET<<" ?"<<endl;
             cout<<"Enter y/n: ";
             cin>>ch;
             if(ch=='y')
@@ -287,7 +292,7 @@ int main()
     cout<<ORANGE<<"Files Loaded! We're good to go!"<<RESET<<endl<<endl;
     while(f==1)
     {
-        cout<<YELLOW<<"SearchEff Menu:"<<endl;
+        cout<<endl<<YELLOW<<"SearchEff Menu:"<<endl;
         cout<<"1 for Viewing your To-Do List"<<endl;
         cout<<"2 for Viewing the Ideas you've got in store"<<endl;
         cout<<"3 for Starting with your revision"<<endl;
@@ -295,24 +300,28 @@ int main()
         cout<<"5 for Searching a Prefix matching words in your files"<<endl;
         cout<<"Enter your choice: "<<RESET<<endl;
         cin>>ch;
+        cout<<endl;
         switch(ch)
         {
             case 1:
                 cout<<"Do you want to view file names where they appear as well? "<<endl;
                 cout<<"Enter y/n: "<<endl;
                 cin>>choice;
+                cout<<endl<<MAGENTA<<"Displaying TO-DO List:  "<<RESET<<endl<<endl;
                 displaySet(obj.todos, choice);
                 break;
             case 2:
                 cout<<"Do you want to view file names where they appear as well? "<<endl;
                 cout<<"Enter y/n: "<<endl;
                 cin>>choice;
+                cout<<endl<<MAGENTA<<"Displaying your Idea Stack:  "<<RESET<<endl<<endl;
                 displaySet(obj.ideas, choice);
                 break;
             case 3:
                 cout<<"Do you want to view file names where they appear as well? "<<endl;
                 cout<<"Enter y/n: "<<endl;
                 cin>>choice;
+                cout<<endl<<MAGENTA<<"Displaying your To-Be-Revised Pointers:  "<<RESET<<endl<<endl;
                 displaySet(obj.torevise, choice);
                 break;
             case 4:
@@ -322,7 +331,7 @@ int main()
                 obj.searchPref();
                 break;
         }
-        cout<<"Enter 1 if you want to continue: "<<endl;
+        cout<<endl<<"Enter 1 if you want to continue: "<<endl;
         cin>>f;
     }
     return 0;
