@@ -13,17 +13,17 @@ const string BLUE = "\033[34m";
 const string MAGENTA="\033[35m";
 
 
-void displaySet(set<pair<string, string>> s, char choice)
+void displaySet(set<pair<string, string>> s, char choice)   //displaying set elements, optionally along with file names
 {
     for(auto it=s.begin(); it!=s.end(); it++)
     {
         cout<<"->      "<<it->first<<endl;
         if(choice=='y')
-        cout<<GREEN<<":  "<<it->second.substr(it->second.find_last_of('\\')+1)<<RESET<<endl;
+        cout<<GREEN<<":  "<<it->second.substr(it->second.find_last_of('\\')+1)<<RESET<<endl;    //removing extension info
     }
 }
 
-void displayVector(vector<string> vec)
+void displayVector(vector<string> vec)  //printing stl vector function:: for testing only
 {
     int n=vec.size();
     for(int i=0; i<n; i++)
@@ -34,11 +34,11 @@ void displayVector(vector<string> vec)
 
 class searchEff{
 public:
-    map<string, map<int, string>> unimap;
-    set <pair<string,string>> todos;
-    set <pair<string,string>> ideas;
-    set <pair<string,string>> torevise;
-    vector <string> allUniqueWords;
+    map<string, map<int, string>> unimap;   //stores all words along with their frequencies in the files they're present
+    set <pair<string,string>> todos;        //storing all To-Dos
+    set <pair<string,string>> ideas;        //storing all Ideas
+    set <pair<string,string>> torevise;     //storing all To Be Revised
+    vector <string> allUniqueWords;         //storing all unique words
 
     void readFile(string filename)
     {
@@ -47,9 +47,9 @@ public:
             cout<<"Error! Could not open file."<<endl;
         map<string, int> uniqWrds;
         string line="";
-        while(getline(file, line))
+        while(getline(file, line))  //reading the file line by line
         {
-            transform(line.begin(), line.end(), line.begin(), ::tolower);
+            transform(line.begin(), line.end(), line.begin(), ::tolower);   //transforming to lowercase for better case matching
            // cout<<line<<endl;
             int l=line.size(), i=0;
             while(line[i]==' '&&i<l)
@@ -74,7 +74,7 @@ public:
             line.push_back(' ');
             int j=i,len=line.size();
             string word="";
-                while(j<len)
+                while(j<len)    //storing words with their frequencies
                 {
                     if(line[j]==' ')
                     {
@@ -84,7 +84,7 @@ public:
                             uniqWrds[word]=1;
                         word="";
                     }
-                    else if(isalnum(line[j]))
+                    else if(isalnum(line[j]))   //ignoring non alpha numeric characters
                         word+=line[j];
                     j+=1;
                 }
@@ -98,14 +98,15 @@ public:
     void readAllFiles(string foldername)
     {
         for (auto entry : fs::directory_iterator(foldername)) {
-            if (fs::is_regular_file(entry) && entry.path().extension() == ".txt") {
+            if (fs::is_regular_file(entry) && entry.path().extension() == ".txt")   //reading all regular txt files only
+            {
                 string str=entry.path().string();
                // cout << "Found file: " << str<< "\n";
                 readFile(str);
             }
         }
     }
-    void displayUniMap()
+    void displayUniMap()    //helper function ::for testing
     {
         cout<<"Displaying UniMap: ";
         for(auto it=unimap.begin(); it!=unimap.end(); it++)
@@ -119,14 +120,14 @@ public:
             cout<<endl;
         }
     }
-    void storeAllUniqueWords()
+    void storeAllUniqueWords()  //storing all unique words seperately to enable binary search on them:: just an extra feature, could have been implemented with simple map.find() as well
     {
         for(auto it=unimap.begin(); it!=unimap.end(); it++)
         {
             allUniqueWords.push_back(it->first);
         }
     }
-    void displayWordPres(string wrd)
+    void displayWordPres(string wrd)    //displaying word presence in files along with their frequencies in decreasing order
     {
         int num, i=0;
         char ch;
@@ -134,7 +135,7 @@ public:
         cin>>num;
         for(auto it=unimap[wrd].rbegin(); it!=unimap[wrd].rend()&&i<num; it++)
         {
-            cout<<endl<<endl<<MAGENTA<<"File found:--     "<<it->second.substr(it->second.find_last_of('\\')+1)<<RESET<<endl<<endl;
+            cout<<endl<<endl<<MAGENTA<<"File found:--     "<<it->second.substr(it->second.find_last_of('\\')+1)<<RESET<<YELLOW<<"(--"<<it->first<<" times)"<<RESET<<endl<<endl;
             i++;
             cout<<ORANGE<<"Do you want to see all occurrences of "<<wrd<<" in this file?"<<RESET<<endl;
             cout<<"Enter y/n: ";
@@ -144,7 +145,7 @@ public:
                 previewWordInFile(it->second, wrd);
         }
     }
-    int findLevestein(string s, string t)
+    int findLevestein(string s, string t)   //implementing Fuzzy Search using DP: finding min number of conversions(insertion, deletion, replacement) to transform word:: finding the min deviation from root word
     {
         int n=s.size(), num=t.size();
         vector<vector<int>> dp(num+1, vector<int>(n+1, 0));
@@ -164,7 +165,7 @@ public:
         }
         return dp[num][n];
     }
-    void searchForWord()
+    void searchForWord()    //word search implementation, all cases covered
     {
         string wrd;
         cout<<"Enter word whose detailed frequency analysis you want to know: ";
@@ -206,7 +207,7 @@ public:
             }
         }
     }
-    int binarySearch(int l, string str, int r)
+    int binarySearch(int l, string str, int r)  //searching in allUniqueWords(presorted) vector
     {
         if(l>r)
             return -1;
@@ -218,7 +219,7 @@ public:
         else
             return binarySearch(l, str, mid-1);
     }
-    void searchPref()
+    void searchPref()   //searching for matching prefixes
     {
         string pref;
         int num_of_matches;
@@ -264,7 +265,7 @@ public:
                 j++;
         }
     }
-    void previewWordInFile(string filename, string wrd)
+    void previewWordInFile(string filename, string wrd) //finding all occurences of word in the file and highlighting its presence
     {
         ifstream file(filename);
         string line="";
@@ -286,7 +287,8 @@ int main()
     cout<<"Welcome to "<<CYAN<<"SearchEff"<<RESET<<"! Just give us your notes folder and we'll have them as neatly arranged as is possible!"<<endl<<endl;
     cout<<MAGENTA<<"Loading and Prepping your files...."<<RESET<<endl<<endl;
     searchEff obj;
-    obj.readAllFiles("C:/Users/Sia Srivastava/OneDrive/Desktop/Git folder/SearchEff/pqrs");
+    //obj.readAllFiles("C:/Users/Sia Srivastava/OneDrive/Desktop/Git folder/notes");
+    obj.readAllFiles("C:/Users/Sia Srivastava/OneDrive/Desktop/Git folder/SearchEff/pqrs"); //entering folder which is to be read :: P.S. replace path with your path, be sure to swap all '\' with '/'
     obj.storeAllUniqueWords();
     this_thread::sleep_for(chrono::seconds(1));
     cout<<ORANGE<<"Files Loaded! We're good to go!"<<RESET<<endl<<endl;
