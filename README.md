@@ -22,25 +22,25 @@ Given the large variety of topics covered and the largely careless style of stud
 
 ## 👀Preview
 ![image](https://github.com/user-attachments/assets/606ddda7-f604-4899-bede-e7626efcbc7b)
-
+<hr>
 ## ⚡Getting Started
-
+<br>
 ### 📌Prerequisites
-✅ A C++ compatible compiler
-✅ Any OS : Windows/ Mac/ Linux
-
+✅ A C++ compatible compiler<br>
+✅ Any OS : Windows/ Mac/ Linux<br>
+<br>
 ### 🚀 Build and Run
-✔️ Clone the Repo
-✔️ Change the folder path in the main function, to your notes folder path  (--at line 290): 
-![image](https://github.com/user-attachments/assets/588c6fd1-c1f7-4ff7-8ab9-b2854c8d14a9)
-✔️ Replace all '\' characters with '/' in the path (if any)
-✔️ Run and enjoy!
-
+✔️ Clone the Repo<br>
+✔️ Change the folder path in the main function, to your notes folder path  (--at line 290): <br>
+![image](https://github.com/user-attachments/assets/588c6fd1-c1f7-4ff7-8ab9-b2854c8d14a9)<br>
+✔️ Replace all '\' characters with '/' in the path (if any)<br>
+✔️ Run and enjoy!<br>
+<br>
 ### 🛠️ How it works
-1️⃣ Add all your notes as .txt files in a single folder.
-2️⃣ Run SearchEff and select options from the menu as desired.
-3️⃣ Sit back and revise stress-free!
-
+1️⃣ Add all your notes as .txt files in a single folder.<br>
+2️⃣ Run SearchEff and select options from the menu as desired.<br>
+3️⃣ Sit back and revise stress-free!<br>
+<br>
 ## 📁Project Structure
 
 | File              | Purpose                           |
@@ -48,6 +48,7 @@ Given the large variety of topics covered and the largely careless style of stud
 | `main.cpp`        | Core logic, menu system           |
 | `pqrs`            | A sample folder having txt files  |
 | `README.md`       | Current file documenting the code |
+<hr>
 
 > _Happy Searching!_ 🔍 ✨
 
