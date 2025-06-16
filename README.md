@@ -5,7 +5,7 @@
 #### A smart search platform designed to organize your notes - efficiently and effortlessly!
 
 >_Tired trying to arrange your notes at exam time, yet being unable to find the important points? Don't worry we've got you covered!_
-Presenting **SearchEff** your one stop solution for arranging, searching andd revising your notes as efficiently as possible! Implemented through fuzzy search, prefix matching and file based frequency ranking.<br>
+Presenting **SearchEff** your one-stop solution for arranging, searching and revising your notes as efficiently as possible! Implemented through fuzzy search, prefix matching and file based frequency ranking.<br>
 <hr>
 
 ## About📝⭐<br>
@@ -15,9 +15,9 @@ Given the large variety of topics covered and the largely careless style of stud
 ☑️ Your one stop solution to organizing your entire notes folder, all at once!<br>
 ☑️ A simple menu based UI for easy interaction.<br>
 ☑️ Find all your To-Do's, Ideas and To-Be-Revised pointers at a single click, your command is our order. <br>
-☑️ Search for a word through your entire folder and find its occurences in your files.<br>
+☑️ Search for a word through your entire folder and find its occurrences in your files.<br>
 ☑️ Even look for the word in the file, and find it highlighted ready to be captured.<br>
-☑️ Prefix search enabled as well, find all the words starting with your prefix along with their detailed frequency analysis as well.<br>
+☑️ Prefix search enabled as well, find all the words starting with your prefix along with their detailed frequency analysis.<br>
 ☑️ A colorful UX for a more engaging experience.<br>
 
 ## Preview 👀<br>
@@ -32,11 +32,11 @@ Given the large variety of topics covered and the largely careless style of stud
 <br>
 
 ###  Build and Run 🚀
-✔️ Clone the Repo<br>
-✔️ Change the folder path in the main function, to your notes folder path  (--at line 290): <br>
-![image](https://github.com/user-attachments/assets/588c6fd1-c1f7-4ff7-8ab9-b2854c8d14a9)<br>
-✔️ Replace all '\' characters with '/' in the path (if any)<br>
-✔️ Run and enjoy!<br>
+-✔️ Clone the Repo
+-✔️ Change the folder path in the main function, to your notes folder path  (--at line 290): 
+![image](https://github.com/user-attachments/assets/588c6fd1-c1f7-4ff7-8ab9-b2854c8d14a9)
+-✔️ Replace all '\' characters with '/' in the path (if any)
+-✔️ Run and enjoy!
 
 ###  How it works 🛠️
 1️⃣ Add all your notes as .txt files in a single folder.<br>
