@@ -273,11 +273,17 @@ public:
         while(getline(file, line))
         {
             count_of_lines++;
-            if(line.find(wrd)!=string::npos)
+            int prev=0, occ=-1, c=0;
+            while((occ=line.find(wrd, prev))!=string::npos)
             {
-                cout<<line.substr(0, line.find(wrd))<<CYAN<<wrd<<RESET<<line.substr(line.find(wrd)+wrd.size())<<"   (--line "<<count_of_lines<<")"<<endl;
+                cout<<line.substr(prev, occ-prev)<<CYAN<<wrd<<RESET;
+                c=1;
+                prev=occ+wrd.size();
             }
+            if(c==1)
+            cout<<line.substr(prev)<<"   (--line "<<count_of_lines<<")"<<endl;
         }
+
     }
     };
 int main()
