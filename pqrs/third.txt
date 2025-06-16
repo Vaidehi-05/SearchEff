@@ -1,4 +1,5 @@
-The quicksort algorithm is a divide-and-conquer technique. It picks an element as a pivot and partitions the given array around the picked pivot. @to-do Implement randomized pivot selection.
+The quicksort algorithm is a divide-and-conquer technique. It picks an element as a pivot and partitions the given array around the picked pivot.
+@to-do Implement randomized pivot selection.
 
 Merge sort is a stable sort, especially useful for linked lists. Its time complexity is always O(n log n). Compared to quicksort, it's not in-place but it's predictable. 
 
