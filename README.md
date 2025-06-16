@@ -1,8 +1,7 @@
 ## SearchEff 🔍📂💪
-![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![Issues](https://img.shields.io/github/issues/Vaidehi-05/SearchEff)  
+![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)<br>
+![Build](https://img.shields.io/badge/build-passing-brightgreen)<br>
+![License](https://img.shields.io/badge/license-MIT-blue)<br>
 #### A smart search platform designed to organize your notes - efficiently and effortlessly!
 
 >_Tired trying to arrange your notes at exam time, yet being unable to find the important points? Don't worry we've got you covered!_
