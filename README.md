@@ -29,7 +29,31 @@ Given the large variety of topics covered and the largely careless style of stud
 ✅ A C++ compatible compiler
 ✅ Any OS : Windows/ Mac/ Linux
 
-### 
+### 🚀 Build and Run
+✔️ Clone the Repo
+✔️ Change the folder path in the main function, to your notes folder path  (--at line 290): 
+![image](https://github.com/user-attachments/assets/588c6fd1-c1f7-4ff7-8ab9-b2854c8d14a9)
+✔️ Replace all '\' characters with '/' in the path (if any)
+✔️ Run and enjoy!
+
+### 🛠️ How it works
+1️⃣ Add all your notes as .txt files in a single folder.
+2️⃣ Run SearchEff and select options from the menu as desired.
+3️⃣ Sit back and revise stress-free!
+
+## 📁Project Structure
+
+| File              | Purpose                           |
+| ----------------- | ----------------------------------|
+| `main.cpp`        | Core logic, menu system           |
+| `pqrs`            | A sample folder having txt files  |
+| `README.md`       | Current file documenting the code |
+
+> _Happy Searching!_ 🔍 ✨
+
+
+
+
 
 
 
