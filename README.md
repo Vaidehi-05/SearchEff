@@ -1,7 +1,6 @@
 ## SearchEff 🔍📂💪
 ![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)<br>
 ![Build](https://img.shields.io/badge/build-passing-brightgreen)<br>
-![License](https://img.shields.io/badge/license-MIT-blue)<br>
 #### A smart search platform designed to organize your notes - efficiently and effortlessly!
 
 >_Tired trying to arrange your notes at exam time, yet being unable to find the important points? Don't worry we've got you covered!_
@@ -45,34 +44,11 @@ Given the large variety of topics covered and the largely careless style of stud
 
 ## Project Structure 📁
 
-| File              | Purpose                           |
-| ----------------- | ----------------------------------|
-| `main.cpp`        | Core logic, menu system           |
-| `pqrs`            | A sample folder having txt files  |
-| `README.md`       | Current file documenting the code |
+| File              | Purpose                                       |
+| ----------------- | ----------------------------------------------|
+| `main.cpp`        | Core logic and menu system                    |
+| `pqrs`            | A sample folder having txt files for testing  |
+| `README.md`       | Project Documentation                         |
 <hr>
 
 > _Happy Searching!_ 🔍 ✨
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
