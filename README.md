@@ -5,7 +5,7 @@
 #### A smart search platform designed to organize your notes - efficiently and effortlessly!
 
 >_Tired trying to arrange your notes at exam time, yet being unable to find the important points? Don't worry we've got you covered!_
-Presenting **SearchEff** your one stop destination for having your notes arranged as efficiently as possible! Implemented through fuzzy search, prefix matching and file based frequency ranking.<br>
+Presenting **SearchEff** your one stop solution for arranging, searching andd revising your notes as efficiently as possible! Implemented through fuzzy search, prefix matching and file based frequency ranking.<br>
 <hr>
 
 ## About📝⭐<br>
@@ -19,6 +19,19 @@ Given the large variety of topics covered and the largely careless style of stud
 ☑️ Even look for the word in the file, and find it highlighted ready to be captured.<br>
 ☑️ Prefix search enabled as well, find all the words starting with your prefix along with their detailed frequency analysis as well.<br>
 ☑️ A colorful UX for a more engaging experience.<br>
+
+## 👀Preview
+![image](https://github.com/user-attachments/assets/606ddda7-f604-4899-bede-e7626efcbc7b)
+
+## ⚡Getting Started
+
+### 📌Prerequisites
+✅ A C++ compatible compiler
+✅ Any OS : Windows/ Mac/ Linux
+
+### 
+
+
 
 
 
