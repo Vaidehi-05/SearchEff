@@ -25,7 +25,6 @@ Given the large variety of topics covered and the largely careless style of stud
 <hr>
 
 ## Getting Started ⚡
-<br>
 
 ### Prerequisites 📌
 ✅ A C++ compatible compiler<br>
@@ -38,13 +37,11 @@ Given the large variety of topics covered and the largely careless style of stud
 ![image](https://github.com/user-attachments/assets/588c6fd1-c1f7-4ff7-8ab9-b2854c8d14a9)<br>
 ✔️ Replace all '\' characters with '/' in the path (if any)<br>
 ✔️ Run and enjoy!<br>
-<br>
 
 ###  How it works 🛠️
 1️⃣ Add all your notes as .txt files in a single folder.<br>
 2️⃣ Run SearchEff and select options from the menu as desired.<br>
 3️⃣ Sit back and revise stress-free!<br>
-<br>
 
 ## Project Structure 📁
 
