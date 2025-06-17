@@ -42,6 +42,15 @@ Given the large variety of topics covered and the largely careless style of stud
 2️⃣ Run SearchEff and select options from the menu as desired.<br>
 3️⃣ Sit back and revise stress-free!<br>
 
+### File Structure 📔
+💠 Create _.txt_ files for parsing. <br>
+💠 For To-DO list points, begin line with *@to-do*.<br>
+💠 For Ideas, begin line with *::idea*. <br>
+💠 For To-Be_Revised points, begin line with *@to-revise*. <br>
+💠 Note that these can be added anywhere in the file, though for efficient parsing, these must begin with a new line.
+💠 Prepare the rest of your notes as you please!
+💠 Run and enjoy!
+
 ## Project Structure 📁
 
 | File              | Purpose                                       |
