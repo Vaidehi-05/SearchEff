@@ -46,7 +46,7 @@ Given the large variety of topics covered and the largely careless style of stud
 💠 Create _.txt_ files for parsing. <br>
 💠 For To-DO list points, begin line with *@to-do*.<br>
 💠 For Ideas, begin line with *::idea*. <br>
-💠 For To-Be_Revised points, begin line with *@to-revise*. <br>
+💠 For To-Be-Revised points, begin line with *@to-revise*. <br>
 💠 Note that these can be added anywhere in the file, though for efficient parsing, these must begin with a new line.<br>
 💠 Prepare the rest of your notes as you please!<br>
 💠 Run and enjoy!<br>
