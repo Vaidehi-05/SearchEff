@@ -10,7 +10,7 @@ Presenting **SearchEff** your one-stop solution for arranging, searching and rev
 ## About📝⭐<br>
 Given the large variety of topics covered and the largely careless style of student note-making, it often becomes an overwhelming experience to sift through your entire notes at exam time. **_SearchEff_** solves this problem by simply keeping your notes organized, readily available however you need them. Implemented completely using **C++ 17**, SearchEff uses one of its key features: the _Filesystems_ library, a super smart way to handle the entire notes folder all at once.
 
-## Featured 📖✨<br>
+## Features 📖✨<br>
 ☑️ Your one stop solution to organizing your entire notes folder, all at once!<br>
 ☑️ A simple menu based UI for easy interaction.<br>
 ☑️ Find all your To-Do's, Ideas and To-Be-Revised pointers at a single click, your command is our order. <br>
